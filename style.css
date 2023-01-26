@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: #f7fff7;
+  margin: 0;
+  padding: 0;
+  overflow-X: hidden;
+}
+
+
+
+
+
+.announcements {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .announcements__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .announcements__title {
+    text-align: center;
+  }
+  
+  .announcements__see-all {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .announcements__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .announcements__item {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.
+    .06);
+    margin-bottom: 10px;
+    display: flex;
+    animation: fadeIn 0.5s ease-in;
+    }
+    
+    .announcements__item-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    }
+    
+    .announcements__item-icon i {
+    font-size: 1.5rem;
+    }
+    
+    .announcements__item-text {
+    flex: 1;
+    }
+    
+    .announcements__item-title {
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+    
+    .announcements__item-description {
+    color: #777;
+    }
+    
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+    .announcements__item:hover {
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .announcements__item-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+      }
+      
+      .announcements__item-icon i {
+        font-size: 1.5rem;
+      }
+      
+      .announcements__item-text {
+        flex: 1;
+      }
+      
+      .announcements__item-title {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      
+      .announcements__item-description {
+        color: #777;
+      }
+      
+      .announcements__item.active{
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        margin-bottom: 10px;
+        display: flex;
+        animation: fadeIn 0.5s ease-in;
+      }
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-50%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      .announcements__item {
+        animation: slideInFromLeft 0.5s ease-in;
+      }
+     /* The overall popup container */
+
+
+
+
+     .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+    
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    
+    .close:hover, .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+
+
+
+
+
+
+
+
+/* The close button */
+.close {
+    float: right;
+    font-size: 30px;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+/* Show the popup when the page is loaded */
+body.show-popup .popup {
+    visibility: visible;
+}
+
+    
+    /* styles for the close button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover, .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    /* styles for the form container */
+    .form-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    form {
+        flex: 1;
+        margin-right: 20px
+    }  
+    /* styles for the form elements */
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+form input[type="email"], form input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+form button[type="submit"] {
+    width: 100%;
+    background-color: #1E88E5;
+    color: white;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form button[type="submit"]:hover {
+    background-color: #1565C0;
+}
+
+/* styles for the form switch */
+.form-switch {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.form-switch button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+  
+
+
+    
+    
+    main {
+    padding: 20px;
+    }
+    
+    section {
+    margin: 40px 20px;
+
+    }
+    
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+    
+    th, td {
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    }
+    
+    th {
+    background-color: #2196F3;
+    color: white;
+    }
+    
+    .add-student-form, .add-teacher-form, .add-class-form {
+    background-color: #E0E0E0;
+    padding: 20px;
+    margin-top: 20px;
+    }
+    
+    form label {
+    display: block;
+    margin-bottom: 10px;
+    }
+    
+    form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    }
+    
+    form button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    form button:hover {
+    background-color: #1E88E5;
+    }
+    
+    .cancel-button {
+    background-color: #F44336;
+    color: white;
+    margin-left: 10px;
+    }
+    
+    .cancel-button:hover {
+        background-color: #E53935;
+}
+
+.add-student-button, .add-teacher-button, .add-class-button {
+background-color: #2196F3;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+margin-top: 20px;
+}
+
+.add-student-button:hover, .add-teacher-button:hover, .add-class-button:hover {
+background-color: #1E88E5;
+}
