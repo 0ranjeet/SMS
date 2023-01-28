@@ -1,0 +1,697 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  background: #f7fff7;
+  margin: 0;
+  padding: 0;
+  overflow-X: hidden;
+}
+
+
+
+
+
+.announcements {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .announcements__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .announcements__title {
+    text-align: center;
+  }
+  
+  .announcements__see-all {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .announcements__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .announcements__item {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.
+    .06);
+    margin-bottom: 10px;
+    display: flex;
+    animation: fadeIn 0.5s ease-in;
+    }
+    
+    .announcements__item-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    }
+    
+    .announcements__item-icon i {
+    font-size: 1.5rem;
+    }
+    
+    .announcements__item-text {
+    flex: 1;
+    }
+    
+    .announcements__item-title {
+    margin-bottom: 5px;
+    font-weight: bold;
+    }
+    
+    .announcements__item-description {
+    color: #777;
+    }
+    
+    @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    }
+    .announcements__item:hover {
+        background-color: #f9f9f9;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .announcements__item-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 10px;
+      }
+      
+      .announcements__item-icon i {
+        font-size: 1.5rem;
+      }
+      
+      .announcements__item-text {
+        flex: 1;
+      }
+      
+      .announcements__item-title {
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      
+      .announcements__item-description {
+        color: #777;
+      }
+      
+      .announcements__item.active{
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+        margin-bottom: 10px;
+        display: flex;
+        animation: fadeIn 0.5s ease-in;
+      }
+      @keyframes slideInFromLeft {
+        from {
+          transform: translateX(-50%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      
+      .announcements__item {
+        animation: slideInFromLeft 0.5s ease-in;
+      }
+     /* The overall popup container */
+      
+     #close{
+      text-align:right ;
+      font-size: large;
+      font-weight: 300;
+      margin-left: 96%;
+  }
+  #close:hover{
+      border: 1px dotted black;
+  }
+
+    #ubody {
+      z-index: 3;
+      position: absolute;
+      width:500px;
+      margin-left: 15%;
+      margin-top: 2%;
+      background-color: transparent;
+      border: none;
+      opacity: 3; 
+      filter: none;
+      -webkit-filter: none;   
+}
+
+.blur {
+  filter: blur(5px); /* apply a blur of 5px */
+  -webkit-filter: blur(5px); /* for Safari and Chrome */
+}
+
+
+
+
+
+
+
+
+
+#newm{
+    display: flex;
+     padding:  0% 7% ; 
+    width: 100%;
+    position: absolute;
+    z-index:2;
+    background-color:white;
+    
+}
+#newm div{
+    margin-left:10px;
+    padding: 10px;
+}
+#newm a{
+  color: black;
+  display: flex;
+  text-decoration: none;
+  padding: 10px;
+}
+#newm a:hover{
+  text-decoration: underline;
+}
+#al_new_m,#al_new_m1{
+  margin: 2% 2% 5% 1%;
+  font-weight: 900;
+}
+#al_new_mi{
+  margin-left:25% ;
+  display:flex;
+}
+#al_new_mi img{
+  height: 300px;
+  width: 300px;
+  margin:7% 3% ;
+}
+#signbox{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 80%;
+  max-width: 600px;
+  min-width: 300px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px 2px #ccc;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#signbox h1#close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox h3 {
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox .signbox_input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: none;
+    background-color: #f1f1f1;
+    font-size: 18px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox #keep {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox #lkeep i {
+    font-size: 20px;
+    margin-right: 10px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox #rkeep {
+    font-size: 18px;
+    cursor: pointer;
+    color: #0077ff;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox #signbox_signin {
+    width: 100%;
+    background-color: #0077ff;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+    transition: background-color 0.2s ease-in;
+}
+#signbox #signbox_signin:hover {
+    background-color: #00aaff;
+}
+
+#signbox hr#line {
+    border: 0.5px solid #ccc;
+    margin: 20px 0;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox h3, #signbox p#create {
+    text-align: center;
+    font-size: 18px;
+    cursor: pointer;
+    animation: fadeIn 0.5s ease-in;
+}
+
+#signbox p#create {
+    color: #0077ff;
+    animation: fadeIn 0.5s ease
+}
+#signbox #signbox_signin{
+  background-color: #0077ff;
+  color: #fff;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+}
+
+#signbox #signbox_signin:hover{
+  background-color: #0055cc;
+  color: #fff;
+}
+/* Add a subtle hover effect on input fields */
+.signbox_input:hover {
+  box-shadow: 0 0 4px #0077ff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Add a focus effect on input fields when clicked */
+.signbox_input:focus {
+  outline: none; /* remove default browser outline */
+  border: 2px solid #0077ff; /* add custom border */
+}
+
+/* Add a "show password" toggle button for password fields */
+#password + span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+  color: #0077ff;
+}
+
+/* Show/hide password text when toggle button is clicked */
+#password:focus + span {
+  color: #0077ff;
+}
+
+/* Add a "required field" asterisk for required input fields */
+.required {
+  color: red;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+/* Add a pulse animation to the "Create" button */
+#create {
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  from {transform: scale(1);}
+  to {transform: scale(1.1);}
+}
+
+/* Add a transition effect to the "Sign In" button */
+#signbox_signin {
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Change the background color of the "Sign In" button on hover */
+#signbox_signin:hover {
+  background-color: #005577;
+}
+
+/* Change the background color of the "Sign In" button on click */
+#signbox_signin:active {
+  background-color: #004455;
+}
+
+ 
+#date {
+    display: flex;
+    align-items: center;
+}
+
+#date input {
+    flex: 1;
+    margin-right: 10px;
+}
+
+#lkeep {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#lkeep input {
+    margin-right: 10px;
+}
+
+#lkeep i {
+    margin-left: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#create {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+#footer{
+  background-color: black;
+}
+#mainbtm{
+  background-color: black;
+  color: white;
+  padding: 10px 50px;
+ 
+}
+#maibtm img{
+  width: 120%;
+}
+#mainbtm1{
+  display: flex;
+  gap:50px;
+  margin:2% 7%;
+  height: 70px;
+
+}
+#mainbtm1>div{
+  display: flex;
+}
+#mainbtm1 a{
+  color: white;
+  text-decoration: none;
+  margin: 10px;
+  
+}
+#mainbtm1 img{
+  margin-top: 10px;
+}
+#mainbtm a:hover{
+  text-decoration: underline;
+}
+.btmhr{
+  color: gainsboro;
+  background-color: white;
+  height: 0.7px;
+  margin: 2% 3%;
+}
+#btmm{
+  display: flex;
+  margin: 2% 7% ;
+  gap: 20px;
+  color: white;
+}
+#btmm a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin: 15px;
+
+}
+#btmm img{
+  height: 20px;
+  width: 35px;
+  margin: 15px;
+}
+#btmm a:hover{
+  text-decoration: underline;
+}
+.lang{
+  display: flex;
+}
+#beautiful{
+  font-size: 28px;
+  line-height: 35px;
+  
+}
+#sopheremail{
+  margin-top: 100%
+}
+#sophere{
+  padding: 5px;
+  border-radius: 5px;
+}
+#submit{
+ color: white;
+ border: 2px solid white;
+ background-color: black;
+ margin-left: 5px;
+ border-radius: 45px;
+ padding: 5px 10px;
+}
+  
+  
+
+
+    
+
+
+
+
+
+
+
+
+/* The close button */
+.close {
+    float: right;
+    font-size: 30px;
+    color: #aaaaaa;
+    cursor: pointer;
+}
+
+/* Show the popup when the page is loaded */
+body.show-popup .popup {
+    visibility: visible;
+}
+
+    
+    /* styles for the close button */
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+    .close:hover, .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    
+    /* styles for the form container */
+    .form-container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    form {
+        flex: 1;
+        margin-right: 20px
+    }  
+    /* styles for the form elements */
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+form input[type="email"], form input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+form button[type="submit"] {
+    width: 100%;
+    background-color: #1E88E5;
+    color: white;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+form button[type="submit"]:hover {
+    background-color: #1565C0;
+}
+
+/* styles for the form switch */
+.form-switch {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.form-switch button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+  
+
+
+    
+    
+    main {
+    padding: 20px;
+    }
+    
+    section {
+    margin: 40px 20px;
+
+    }
+    
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    }
+    
+    th, td {
+    border: 1px solid #E0E0E0;
+    padding: 10px;
+    }
+    
+    th {
+    background-color: #2196F3;
+    color: white;
+    }
+    
+    .add-student-form, .add-teacher-form, .add-class-form {
+    background-color: #E0E0E0;
+    padding: 20px;
+    margin-top: 20px;
+    }
+    
+    form label {
+    display: block;
+    margin-bottom: 10px;
+    }
+    
+    form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    }
+    
+    form button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    }
+    
+    form button:hover {
+    background-color: #1E88E5;
+    }
+    
+    .cancel-button {
+    background-color: #F44336;
+    color: white;
+    margin-left: 10px;
+    }
+    
+    .cancel-button:hover {
+        background-color: #E53935;
+}
+
+.add-student-button, .add-teacher-button, .add-class-button {
+background-color: #2196F3;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+margin-top: 20px;
+}
+
+.add-student-button:hover, .add-teacher-button:hover, .add-class-button:hover {
+background-color: #1E88E5;
+}
