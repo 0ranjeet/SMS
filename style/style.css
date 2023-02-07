@@ -8,11 +8,25 @@
 
 body {
   font-family: 'Oswald', sans-serif;
-  background: #f7fff7;
+  background: #f2f2f2;
   margin: 0;
   padding: 0;
   overflow-X: hidden;
 }
+.alert {
+  padding: 20px;
+  background-color: #f44336; /* red */
+  color: white;
+  margin-bottom: 15px;
+  transition: all 0.5s ease-in-out;
+}
+
+.alert:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
 
 
 
@@ -431,15 +445,24 @@ body {
 }
 
 #create {
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    cursor: pointer;
+  background-color: blue;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  animation: buttonanimation 0.5s ease-in-out;
 }
+@keyframes buttonanimation {
+  0% {
+      transform: scale(1);
+  }
+  50% {
+      transform: scale(1.2);
+  }
+  100% {
+      transform: scale(1);
+  }
+}
+
 
 #footer{
   background-color: black;
