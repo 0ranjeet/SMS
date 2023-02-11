@@ -31,8 +31,16 @@ fetch('/schedule/staff.json')
      td1.addEventListener("click",popb)
      
      function popb(){
+        if(document.querySelector("#pop")){
+            document.querySelector("#pop").remove();
+           
+        }
       let pop=document.createElement("div");
       pop.setAttribute("id","pop");
+      let close=document.createElement("h1");
+      close.innerText="X";
+      close.setAttribute("id","cls")
+      close.addEventListener("click",closeb)
       let forms=document.createElement("form");
       forms.setAttribute("id","form");
       forms.setAttribute("action"," ");
@@ -86,7 +94,7 @@ fetch('/schedule/staff.json')
       sub.append(opn1,opn2,opn3)
      
       forms.append(lbl,classn,sec,sub,inn)
-      pop.append(forms)
+      pop.append(close,forms)
  
       document.querySelector("body").append(pop)
       addFormListener()
@@ -114,4 +122,6 @@ fetch('/schedule/staff.json')
 document.querySelector("#pop").addEventListener("click", function() {
   addFormListener();
 });
-
+function closeb(){
+    document.querySelector("#pop").remove();
+}

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Management System</title>
-    <link rel="stylesheet" type="text/css" href="/style/nav.css">
+    
     <link rel="stylesheet" href="/style/style.css">
     <meta property="og:image" content="">
     <meta property="og:image:type" content="image/png">
@@ -16,28 +16,13 @@
 
 <script src="https://kit.fontawesome.com/6ce38a8a26.js" crossorigin="anonymous"></script>
 <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-
+<link rel="stylesheet" href="/nav/nav.css">
 
 </head>
 
 <body>
   <back>
-    <nav>
-        <a href="#">School<span>Name</span></a>
-        <div class="menu">
-          <div class="hamburger"></div>
-        </div>
-        <ul id="show">
-          <li><a href="#" class='active'>Home</a></li>
-          <li><a href="#students">Students</a></li>
-          <li><a href="#teachers">Teachers</a></li>
-          <li><a href="#classes">Classes</a></li>
-          <li><a  id="profile" href="./profile/profile.html"><div id="profile">
-            <i style="font-weight: 900;font-size: 25px;" class="fa-regular fa-user"></i>
-          </div></a></li>
-
-        </ul>
-    </nav>
+    <div id="navbar"></div>
    <div id="log"></div>
    
     <section id="dashboard">
@@ -234,65 +219,20 @@
    
   </back>
   <div id="ubody"></div>
+  <div id="footer"></div>
 </body>
 
 </html>
 <script src="/script/loginsignin.js"></script>
 <script>// toggle add student form
-    const addStudentButton = document.querySelector(".add-student-button");
-    const addStudentForm = document.querySelector(".add-student-form");
-    
-    addStudentButton.addEventListener("click", function() {
-    addStudentForm.style.display = "block";
-    });
-    
-    // toggle add teacher form
-    const addTeacherButton = document.querySelector(".add-teacher-button");
-    const addTeacherForm = document.querySelector(".add-teacher-form");
-    
-    addTeacherButton.addEventListener("click", function() {
-    addTeacherForm.style.display = "block";
-    });
-    
-    // toggle add class form
-    const addClassButton = document.querySelector(".add-class-button");
-    const addClassForm = document.querySelector(".add-class-form");
-    
-    addClassButton.addEventListener("click", function() {
-    addClassForm.style.display = "block";
-    });
-    
-    // cancel button
-    const cancelButton = document.querySelectorAll(".cancel-button");
-    
-    cancelButton.forEach(function(button) {
-    button.addEventListener("click", function() {
-    this.parentElement.style.display = "none";
-    });
-    });
-    // Add active class to current link
 
-
-
-    //nav
-
-
-    const burgerToggle = document.querySelector('.menu').onclick = toggleMenu;
-
-function toggleMenu () {
-  document.querySelector('#show').classList.toggle('show');
-  document.querySelector('.hamburger').classList.toggle('close');
-  document.querySelector('#students').classList.toggle('close');
-};
-
-
-///navend
-
-
-
-
-
-////
-    
-    
     </script>
+<script type="module">
+  import {navimp,footimp} from "/nav/navimp.js"
+  document.querySelector("#navbar").innerHTML=navimp();
+
+  
+  document.querySelector("#footer").innerHTML=footimp();
+
+</script>
+<script src="/nav/nav.js"></script>
