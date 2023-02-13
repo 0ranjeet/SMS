@@ -1,3 +1,4 @@
+const url='https://89e0-183-82-153-117.in.ngrok.io'
 const parent = document.querySelector("back");
 function signupfun(){
   document.querySelector("#ubody").style.display = "block";
@@ -51,29 +52,39 @@ function forget(){
 
 
 function signinf(){
-  userdata=JSON.parse(localStorage.getItem("userdata"))
+  var status=false;
   document.querySelector("#ubody").style.display = "block";
   parent.classList.add("blur");
      
-      var indata={
-          username:document.querySelector("#email").value,
-          userpwd:document.querySelector("#pswrd").value,
+      indata={
+          email:document.querySelector("#email").value,
+          password:document.querySelector("#pswrd").value,
       }
-      if(indata===null){
+      if(indata.email =="" || indata.password==""){
           alert("create an account")
           
 document.getElementById("alert-container").classList.add("alert");
 
-      }else if((indata.username==userdata.email)&&(indata.userpwd==userdata.password)){
-          localStorage.setItem("signdat",JSON.stringify(userdata))
-          alert("log in succsesfull")
-          document.getElementById("alert-container").classList.add("alert");
-          document.querySelector("#ubody").style.display = "none";
-          document.querySelector("#ubody").style.filter = "none";
-          document.querySelector("#ubody").style.webkitFilter = "none";
-           document.querySelector("#signbox").remove();
-           document.querySelector("#ubody").style.display = "none";
-           parent.classList.remove("blur");
+      }else if((indata.email!="")&&(indata.password!="")){
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        
+        var raw = JSON.stringify(indata);
+        
+        var requestOptions = {
+          method: 'POST',
+          headers: myHeaders,
+          body: raw,
+          redirect: 'follow'
+        };
+        
+        fetch(`${url}/api/v1/common/login`, requestOptions)
+          .then(response => response.text())
+          .then(result => {
+            if(result.code==200){
+              status=true;
+          }})
+          .catch(error => console.log('error', error));
       }else{
           alert("user doesnot exist!")
           document.getElementById("alert-container").classList.add("alert");
@@ -81,9 +92,19 @@ document.getElementById("alert-container").classList.add("alert");
           parent.classList.add("blur");
           joinfun();
       }
-      document.querySelector("#signbox").remove();
+      if(status=true){
+        alert("log in succsesfull")
+        status=true;
+        // document.getElementById("alert-container").classList.add("alert");
+        document.querySelector("#ubody").style.display = "none";
+        document.querySelector("#ubody").style.filter = "none";
+        document.querySelector("#ubody").style.webkitFilter = "none";
+         document.querySelector("#signbox").remove();
+         document.querySelector("#ubody").style.display = "none";
+       parent.classList.remove("blur");
+      }
       
-      document.querySelector("#sign").innerText=userdata.username;
+      // document.querySelector("#sign").innerText=userdata.username;
 }
 function joinfun(){
   document.querySelector("#ubody").style.display = "block";

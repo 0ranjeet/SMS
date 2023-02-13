@@ -1,134 +1,107 @@
 
-
-.active {
-  color: #457b9d;
-  position: relative;
-}
-
-nav {
-  display:flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-  background: #f7fff7;
-  box-shadow: 0 5px 15px -7px rgba(0, 0, 0, 0.35);
-  z-index: 4;
-}
-
-nav a {
-  font-size: 20px;
-  font-weight: 900;
-  width:100%;
-  text-transform: uppercase;
+* {
+  vertical-align: baseline;
+  font-weight: inherit;
+  font-family: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  border: 0 none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
   text-decoration: none;
-  color: #457b9d;
-  margin: 25px 0;
-}
-
-nav a span { color: #1d3557; }
-
-.menu {
-  width: 27px;
-  height: 21px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-
-.menu .hamburger {
-  position: relative;
-  width: 27px;
-  height: 3px;
-  background: #a8dadc;
-  pointer-events: none;
-  display: none;
-}
-
-.menu .hamburger::before {
-  position: absolute;
-  content: "";
-  width: 27px;
-  height: 3px;
-  background: #a8dadc;
-  transform: translateY(7px);
-}
-
-.menu .hamburger::after {
-  position: absolute;
-  content: "";
-  width: 27px;
-  height: 3px;
-  background: #a8dadc;
-  transform: translateY(-7px);
-}
-
-nav ul {
-  display: flex;
   list-style: none;
+  box-sizing: border-box;
 }
 
-nav ul li { margin: 0 20px; }
-
-nav ul li:nth-last-child(1) { margin: 0 0 0 20px; }
-
-nav ul li a {
-  position: relative;
-  font-size: 16px;
-  color: #1d3557;
-}
-
-nav ul li a::after {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 3px;
-  bottom: 0;
-  left: 0;
-  background: #a8dadc;
-  transition: all 250ms ease;
-  transform: translateY(20px);
-  opacity: 0;
-}
-
-nav ul li a:hover{ color: #457b9d; }
-
-nav ul li a:hover::after {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/*********************/
-/* Responsive style */
-/*******************/
-
-@media screen and (max-width: 641px) {
-  .menu .hamburger { display: block; }
-  nav ul {
-    position: fixed;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 100%;
-    height: calc(100% - 80px);
-    top: 10px;
-    right: -100%;
-    background: #f7fff7;
-    box-shadow: -5px 10px 15px -7px rgba(0, 0, 0, 0.35);
-    z-index: 4;
-    transition: all 600ms ease;
+body { font-family:Arial, Helvetica, sans-serif }
+  nav { 
+      background: #0082e6; 
+      height: 80px; 
+      width: 100%; 
   }
-  nav ul.show { right: 0; }
-  .menu .hamburger.close {
-    transform: translateX(40px);
+      label.logo{ 
+          color: white; 
+          font-size: 35px; 
+          line-height: 80px; 
+          padding:0 100px; 
+          font-weight: bold; 
+      }
+      nav ul{ 
+          float: right; 
+          margin-right:20px; 
+      }
+          nav ul li{ 
+              display: inline-block; 
+              line-height:80px;
+              margin: 0 5px; 
+          }
+              nav ul li a{
+                  color: white;
+                  font-size: 17px;
+                  padding: 7px 13px;
+                  border-radius: 3px;
+              }
+                  a.active,a:hover{
+                      background-color: #1b9bff;
+                      transition: .5s;
+                  }
+  .checkbtn{
+      font-size: 30px;
+      color: white;
+      float: right;
+      line-height: 80px;
+      margin-right: 40px;
+      cursor: pointer;
+      display: none; 
   }
-  .menu .hamburger.close::before {
-    transform: translate(-40px) rotate(45deg);
+      #check{
+         display: none; 
+      }
+
+/*--------------------------*/
+/*----- MEDIA QUERRY -----*/
+/*--------------------------*/
+
+@media (max-width: 952px){
+  label.logo{
+      font-size: 30px;
+      padding-left: 50px;
   }
-  .menu .hamburger.close::after {
-    transform: translate(-40px) rotate(135deg);
+  nav ul li a{
+      font-size: 16px;
   }
-  nav ul li a { font-size: 18px; }
-  nav ul li:nth-last-child(1) { margin: 0 20px; }
 }
 
+@media (max-width: 858px){
+  .checkbtn{
+      display: block; 
+  }
+  ul{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      top: 80px;
+      left: -100%;
+      top: 80px;
+      transition: all .5s;
+      text-align: center;
+      background-color: #2c3e50;
+  }
+      nav ul li{
+          display: block;
+          margin: 50px 0;
+          line-height: 30px;
+      }
+          nav ul li a{
+              font-size: 20px;
+          }
+              a:hover,a.active{
+                  background: none;
+                  color: #0082e6;
+              }
 
+      #check:checked ~ ul{
+          left: 0;
+      }
+}

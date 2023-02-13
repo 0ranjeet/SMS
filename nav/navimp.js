@@ -1,21 +1,21 @@
 function navimp(){
     return `
+ 
     <nav>
-    <a href="#">School<span>Name</span></a>
-    <div class="menu">
-      <div class="hamburger"></div>
-    </div>
-    <ul id="show">
-      <li><a href="#" class='active'>Home</a></li>
-      <li><a href="#students">Students</a></li>
-      <li><a href="#teachers">Teachers</a></li>
-      <li><a href="#classes">Classes</a></li>
-      <li><a  id="profile" href="./profile/profile.html"><div id="profile">
-        <i style="font-weight: 900;font-size: 25px;" class="fa-regular fa-user"></i>
-      </div></a></li>
-
+    <input type="checkbox" id="check">
+    <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <label class="logo">SMS</label>
+    <ul>
+        <li><a class="active" href="#">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">Feedback</a></li>
     </ul>
 </nav>
+
     `;
 }
 function footimp(){
