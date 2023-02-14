@@ -1,15 +1,17 @@
 function addm(){
   const api= localStorage.getItem("api");
   var d=new Date();
-  c=d.getFullYear()+'/'+(d.getMonth())+'/'+d.getDate();
+  c=d.getFullYear()+'-'+d.getMonth()+'-'+d.getDate();
+  console.log(c)
   idata={
-    email: document.querySelector('#email').value,
+    email: document.querySelector('#remail').value,
     phone: document.querySelector('#phone').value,
     password: document.querySelector('#password').value,
     createdOn: c,
     accountStatus: "active",
     role: "admin"
   }
+  console.log(idata)
   var token=localStorage.getItem("token")
   var myHeaders = new Headers();
 myHeaders.append("Authorization", `Bearer ${token}`);

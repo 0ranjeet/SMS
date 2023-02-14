@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <style>
+      /* basic styling */
+     /* Registration form styles */
+
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f1f1f1;
+}
+
+/* Container Styles */
+#sform {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+form {
+  display: grid;
+  grid-gap: 10px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 16px;
+  box-shadow: inset 0 2px 2px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #aaa;
+}
+
+/* Error Message Styles */
+.error-msg {
+  color: #f00;
+  font-size: 12px;
+  font-style: italic;
+}
+
+/* Validation Styles */
+input:invalid, select:invalid {
+  border-color: #f00;
+}
+
+input:valid, select:valid {
+  border-color: #0f0;
+}
+
+/* Button Styles */
+#submit-btn {
+  margin: 20px auto 0;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#submit-btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+
+    <div id="sform">
+        <h1>Registration Form</h1>
+       
+          <div class="row">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+            <span class="error-msg" id="firstName-error"></span>
+          </div>
+          <div class="row">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+            <span class="error-msg" id="lastName-error"></span>
+          </div>
+          <div class="row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span class="error-msg" id="email-error"></span>
+          </div>
+          <div class="row">
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+            <span class="error-msg" id="phone-error"></span>
+          </div>
+          <div class="row">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <span class="error-msg" id="password-error"></span>
+          </div>
+          <div class="row">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+            <span class="error-msg" id="dob-error"></span>
+          </div>
+          <div class="row">
+            <label for="stClass">Class:</label>
+            <select id="stClass" name="stClass" required>
+              <option value="">Select a Class</option>
+              <option value="1st">1st</option>
+              <option value="2nd">2nd</option>
+              <option value="3rd">3rd</option>
+              <option value="4th">4th</option>
+              <option value="5th">5th</option>
+              <option value="6th">6th</option>
+              <option value="7th">7th</option>
+              <option value="8th">8th</option>
+              <option value="9th">9th</option>
+              <option value="10th">10th</option>
+            </select>
+            <span class="error-msg" id="class-error"></span>
+          </div>
+          <div class="row">
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" name="fatherName" required>
+            <span class="error-msg" id="fatherName-error"></span>
+          </div>
+          <div class="row">
+            <label for="motherName">Mother's Name:</label>
+            <input type="text" id="motherName" name="motherName" required>
+            <span class="error-msg" id="motherName-error"></span>
+          </div>
+          <div class="row">
+            <button type="submit" onclick="sadd()" id="submit-btn">Submit</button>
+          </div>
+       
+      </div>
+      
+
+</body>
+</html>
+<script>
+function sadd(){
+  const api= localStorage.getItem("api");
+    idata={
+    email: document.querySelector('#email').value,
+    phone: document.querySelector('#phone').value,
+    firstName: document.querySelector('#firstName').value,
+    lastName: document.querySelector('#lastName').value,
+    password: document.querySelector('#password').value,
+    accountActiveStatus:true,
+    dob: document.querySelector('#dob').value,
+    stlass: document.querySelector('#stClass').value,
+    fatherName: document.querySelector('#fatherName').value,
+    motherName: document.querySelector('#motherName').value,
+    }
+    console.log(idata)
+  var token=localStorage.getItem("token")
+
+    var myHeaders = new Headers();
+myHeaders.append("Authorization", `Bearer ${token}`);
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify(idata);
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch(`${api}/api/v1/student/register`, requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+   
+}
+</script>

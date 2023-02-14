@@ -64,7 +64,7 @@ function signinf() {
     email: document.querySelector("#email").value,
     password: document.querySelector("#pswrd").value,
   }
-
+   console.log(indata)
   if (indata.email == "" || indata.password == "") {
     alert("create an account")
 
