@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/nav/nav.css">
+    <link rel="stylesheet" href="/admin/admin.css">
+</head>
+<style>
+
+</style>
+<body>
+    <div id="navbar"></div>
+    <div id="ubody"></div>
+    <div id="addf">
+  
+      <h3>Add Admin</h3>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" maxlength="30" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" minlength="10" maxlength="10" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" minlength="8" maxlength="60" required>
+        </div>
+       
+        <button type="submit" onclick="addm()">Submit</button>
+  
+    </div>
+</body>
+</html>
+<script src="/script/loginsignin.js"></script>
+<script type="module">
+    import {navimp,footimp} from "/nav/navimp.js"
+    document.querySelector("#navbar").innerHTML=navimp();
+  
+    
+    // document.querySelector("#footer").innerHTML=footimp();
+  
+  </script>
+  <script src="/admin/admin.js"></script>

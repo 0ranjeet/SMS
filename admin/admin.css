@@ -1,0 +1,65 @@
+
+/* Center the form on the page */
+#addf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+/* Style the form groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Style the labels */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Style error messages */
+input:invalid {
+  border-color: #ff0000;
+}
+
+input:invalid + .error-message {
+  display: block;
+  margin-top: 5px;
+  color: #ff0000;
+  font-size: 12px;
+}
+
+.error-message {
+  display: none;
+}
